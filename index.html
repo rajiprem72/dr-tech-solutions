@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DR Tech Solutions - Membership</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f9;
+}
+
+/* Top Bar */
+.topbar {
+    background: #002b5c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 300px;
+    background: url('banner.png') no-repeat center;
+    background-size: cover;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    margin-top: -50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.success {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+    padding: 15px;
+    background: #002b5c;
+    color: white;
+    text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Top Contact Bar -->
+<div class="topbar">
+📞 +91 7708043476 | 📧 drtech1solutions25@gmail.com
+</div>
+
+<!-- Banner -->
+<div class="banner"></div>
+
+<div class="container">
+<h2>Membership Registration</h2>
+
+<form id="memberForm">
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Age</label>
+<input type="number" name="age" required>
+
+<label>Sex</label>
+<select name="sex">
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<label>Blood Group (Optional)</label>
+<input type="text" name="blood">
+
+<h3>Address</h3>
+
+<label>Address Line 1</label>
+<input type="text" name="address1">
+
+<label>Address Line 2</label>
+<input type="text" name="address2">
+
+<label>City</label>
+<input type="text" name="city">
+
+<label>Pincode</label>
+<input type="text" name="pincode">
+
+<label>State</label>
+<input type="text" name="state">
+
+<label>Country</label>
+<input type="text" name="country">
+
+<label>Your Profession</label>
+<select name="profession">
+<option>College Student</option>
+<option>Fresher</option>
+<option>House Wife</option>
+<option>Working Professional</option>
+<option>Parent/Guardian</option>
+<option>Retired Person</option>
+<option>Senior Citizen</option>
+<option>Handicapped</option>
+<option>Widow</option>
+<option>Social Worker</option>
+<option>Others</option>
+</select>
+
+<h3>Need Help On</h3>
+
+<label><input type="checkbox" name="help" value="Education"> Education</label>
+<label><input type="checkbox" name="help" value="Financial Assistance"> Financial Assistance</label>
+<label><input type="checkbox" name="help" value="Scholarship"> Scholarship</label>
+<label><input type="checkbox" name="help" value="Health & Wealth"> Health & Wealth Management</label>
+<label><input type="checkbox" name="help" value="Job"> Job Opportunity</label>
+<label><input type="checkbox" name="help" value="Business"> Business Management</label>
+<label><input type="checkbox" name="help" value="Industrial"> Industrial Solutions</label>
+<label><input type="checkbox" name="help" value="Govt"> Govt Liaison</label>
+
+<label>Extra Information</label>
+<textarea name="extra"></textarea>
+
+<br><br>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<p class="success" id="successMsg"></p>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+DR Tech Solutions | 📞 +91 7708043476 | 📧 drtech1solutions25@gmail.com
+</div>
+
+<script>
+const scriptURL = "YOUR_GOOGLE_SCRIPT_URL";
+
+document.getElementById("memberForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    let formData = new FormData(e.target);
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        document.getElementById("successMsg").innerText =
+        "Registration Successful! Please complete payment.";
+
+        window.location.href = "YOUR_RAZORPAY_LINK";
+    })
+    .catch(error => alert("Error! " + error.message));
+});
+</script>
+
+</body>
+</html>
