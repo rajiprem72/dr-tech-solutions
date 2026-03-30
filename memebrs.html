@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Members Report - DR Tech Solutions</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.member {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.member a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.details {
+    display: none;
+    background: #f9f9f9;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.paid {
+    color: green;
+}
+
+.pending {
+    color: red;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Members Report</h2>
+
+<div class="section">
+<h3 class="paid">PAID Members</h3>
+<div id="paidList"></div>
+</div>
+
+<div class="section">
+<h3 class="pending">PENDING Members</h3>
+<div id="pendingList"></div>
+</div>
+
+</div>
+
+<script>
+
+const sheetURL = "https://script.google.com/macros/s/AKfycbwzAnwZfOPGlrVP-xFzN-qXCB5zpiTwq7T-elLeU2X8X8uEL44He-RGM5GMfAP-7nHI/exec";
+
+fetch(sheetURL)
+.then(res => res.json())
+.then(data => {
+
+    data.forEach((row, index) => {
+
+        const paymentStatus = row[16]; // Column Q
+
+        const name = row[1];
+        const mobile = row[4];
+        const email = row[5];
+
+        let container;
+
+        if (paymentStatus === "PAID") {
+            container = document.getElementById("paidList");
+        } else {
+            container = document.getElementById("pendingList");
+        }
+
+        const div = document.createElement("div");
+        div.className = "member";
+
+        const link = document.createElement("a");
+        link.innerText = name + " | " + mobile + " | " + email;
+
+        const details = document.createElement("div");
+        details.className = "details";
+
+        // 🔵 PAID DETAILS
+        if (paymentStatus === "PAID") {
+
+            details.innerHTML = `
+            Age: ${row[2]} <br>
+            Sex: ${row[3]} <br>
+            Blood: ${row[6]} <br>
+            Address1: ${row[7]} <br>
+            Address2: ${row[8]} <br>
+            City: ${row[9]} <br>
+            Pincode: ${row[10]} <br>
+            State: ${row[11]} <br>
+            Country: ${row[12]} <br>
+            Profession: ${row[13]} <br>
+            Help: ${row[14]} <br>
+            Extra: ${row[15]} <br><br>
+
+            <b>Payment Status:</b> ${row[16]} <br>
+            <b>Payment ID:</b> ${row[17]} <br>
+            <b>Amount:</b> ${row[18]} <br>
+            <b>Method:</b> ${row[19]} <br>
+            <b>Date:</b> ${row[20]}
+            `;
+
+        } else {
+
+        // 🔴 PENDING DETAILS
+
+            details.innerHTML = `
+            Age: ${row[2]} <br>
+            Sex: ${row[3]} <br>
+            Blood: ${row[6]} <br>
+            Address1: ${row[7]} <br>
+            Address2: ${row[8]} <br>
+            City: ${row[9]} <br>
+            Pincode: ${row[10]} <br>
+            State: ${row[11]} <br>
+            Country: ${row[12]} <br>
+            Profession: ${row[13]} <br>
+            Help: ${row[14]} <br>
+            Extra: ${row[15]}
+            `;
+        }
+
+        link.onclick = () => {
+            details.style.display =
+                details.style.display === "none" ? "block" : "none";
+        };
+
+        div.appendChild(link);
+        div.appendChild(details);
+
+        container.appendChild(div);
+    });
+
+})
+.catch(err => {
+    alert("Error loading data");
+});
+
+</script>
+
+</body>
+</html>
