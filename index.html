@@ -121,10 +121,12 @@ input[type="checkbox"] {
 }    
 @media (max-width: 768px) {
   .banner {
-    background-size: contain !important;  /* KEY FIX */
+    background-size: contain !important;
     background-position: center;
     background-repeat: no-repeat;
-    height: 200px;  /* IMPORTANT: don't use auto */
+
+    height: 180px;   /* 🔥 FIX: give proper height */
+    margin: 0;       /* remove any spacing */
   }
 }
 
