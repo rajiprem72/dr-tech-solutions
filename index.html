@@ -120,6 +120,22 @@ input[type="checkbox"] {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }    
+@media (max-width: 768px) {
+  .banner {
+    background-size: contain !important;  /* show full image */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;  /* remove fixed height */
+    min-height: 200px; /* optional */
+  }
+
+  .banner img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+    
 </style>
 
 </head>
