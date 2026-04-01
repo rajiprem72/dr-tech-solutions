@@ -28,7 +28,6 @@ body {
     background: url('banner.png') no-repeat center;
     background-size: cover;
 }
-
 /* Container */
 .container {
     max-width: 900px;
@@ -122,12 +121,12 @@ input[type="checkbox"] {
 }    
 @media (max-width: 768px) {
   .banner {
-    background-size: contain !important;  /* show full image */
+    background-size: contain !important;  /* KEY FIX */
     background-position: center;
     background-repeat: no-repeat;
-    height: auto;  /* remove fixed height */
-    min-height: 200px; /* optional */
+    height: 200px;  /* IMPORTANT: don't use auto */
   }
+}
 
   .banner img {
     width: 100%;
