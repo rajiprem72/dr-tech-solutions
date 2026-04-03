@@ -11,6 +11,14 @@ body {
     margin: 0;
     background: #f4f6f9;
 }
+body {
+    margin: 0;
+}
+background-size: cover;
+.banner {
+    margin: 0;
+    padding: 0;
+}    
 
 /* Top Bar */
 .topbar {
@@ -24,11 +32,10 @@ body {
 /* Banner */
 .banner {
     width: 100%;
-    height: 200px;
+    height: auto;
     background: url('banner.png') no-repeat center;
     background-size: cover;
 }
-
 /* Container */
 .container {
     max-width: 900px;
@@ -40,18 +47,9 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-h2, h3 {
+h2 {
     text-align: center;
     color: #2c3e50;
-}
-
-.service {
-    margin-bottom: 15px;
-}
-
-.service h4 {
-    margin-bottom: 5px;
-    color: #007BFF;
 }
 
 input, select, textarea {
@@ -87,6 +85,7 @@ button:hover {
     font-weight: bold;
 }
 
+/* Footer */
 .footer {
     margin-top: 30px;
     padding: 15px;
@@ -94,84 +93,171 @@ button:hover {
     color: white;
     text-align: center;
 }
+.banner-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
 
+.banner-img {
+    width: 814px;
+    height: 215px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.banner-img {
+    width: 100%;
+    max-width: 814px;
+    height: auto;
+    border-radius: 8px;
+}    
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
 .checkbox-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+}    
+@media (max-width: 768px) {
+  .banner {
+    background-size: contain !important;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 180px;   /* 🔥 FIX: give proper height */
+    margin: 0;       /* remove any spacing */
+  }
 }
+
+  .banner img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+    
 </style>
 
 </head>
 
 <body>
 
+<!-- Top Contact Bar -->
+  
 <div class="topbar">
 📞 +91 7708043476 | 📧 drtech1solutions25@gmail.com
 </div>
 
+<!-- Banner -->
 <div class="banner"></div>
 
-<div class="container">
+<section id="services" style="padding:20px 0;">
 
-<h2>Our Services</h2>
+<h2 style="text-align:center; color:#2c3e50;">Our Services</h2>
 
 <div class="service">
 <h4>1. Job Leads (Local)</h4>
-<p>We provide verified job opportunities within your city and state. Our network connects you with employers actively hiring.</p>
+<p>
+We provide verified job opportunities within your city and state. 
+Our network connects you with employers actively hiring.
+</p>
 </div>
 
 <div class="service">
 <h4>2. Business Leads (Local)</h4>
-<p>Get access to business opportunities and partnerships in your local area. We help you connect with potential clients and collaborators.</p>
+<p>
+Get access to business opportunities and partnerships in your local area. 
+We help you connect with potential clients and collaborators.
+</p>
 </div>
 
 <div class="service">
 <h4>3. Study Abroad</h4>
-<p>Guidance for students planning higher education overseas. We assist with course selection, admission process, and documentation.</p>
+<p>
+Guidance for students planning higher education overseas. 
+We assist with course selection, admission process, and documentation.
+</p>
 </div>
 
 <div class="service">
 <h4>4. Job Abroad</h4>
-<p>Explore international job opportunities with expert guidance. We support you with applications, interviews, and visa processes.</p>
+<p>
+Explore international job opportunities with expert guidance. 
+We support you with applications, interviews, and visa processes.
+</p>
 </div>
 
 <div class="service">
 <h4>5. Skill Development (Tamil, Hindi, Sanskrit)</h4>
-<p>Learn Indian languages with structured programs and expert trainers. Enhance your cultural and communication skills.</p>
+<p>
+Learn Indian languages with structured programs and expert trainers. 
+Enhance your cultural and communication skills.
+</p>
 </div>
 
 <div class="service">
 <h4>6. Skill Development (English, French, German)</h4>
-<p>Improve your global communication skills with foreign languages. Ideal for career growth and international opportunities.</p>
+<p>
+Improve your global communication skills with foreign languages. 
+Ideal for career growth and international opportunities.
+</p>
 </div>
 
 <div class="service">
 <h4>7. Skill Development & Certification Courses</h4>
-<p>We offer industry-relevant courses with certifications. These programs help you upgrade your skills and boost employability.</p>
+<p>
+We offer industry-relevant courses with certifications. 
+These programs help you upgrade your skills and boost employability.
+</p>
 </div>
 
 <div class="service">
 <h4>8. Startup & Entrepreneurship Guidance</h4>
-<p>Get expert mentorship to start and grow your business. We connect you with industry professionals for practical insights.</p>
+<p>
+Get expert mentorship to start and grow your business. 
+We connect you with industry professionals for practical insights.
+</p>
 </div>
 
 <div class="service">
 <h4>9. Standard Earnings Opportunities</h4>
-<p>Earn consistent income through our membership-based model. Ideal for individuals seeking part-time or full-time income.</p>
+<p>
+Earn consistent income through our membership-based model. 
+Ideal for individuals seeking part-time or full-time income.
+</p>
 </div>
 
 <div class="service">
 <h4>10. Company Registration & Legal Support</h4>
-<p>We assist with company registration and legal compliance. Our experts ensure smooth and hassle-free business setup.</p>
+<p>
+We assist with company registration and legal compliance. 
+Our experts ensure smooth and hassle-free business setup.
+</p>
 </div>
 
-<p style="text-align:center; font-weight:bold; color:green;">
+<p style="text-align:center; font-weight:bold; color:green; font-size:18px; margin-top:20px;">
 Join our franchise model with a membership fee of just Rs.1000/- and start your journey today!
 </p>
 
-<hr>
+<div style="text-align:center; margin:20px 0;">
+<button onclick="document.getElementById('memberForm').scrollIntoView({behavior:'smooth'});">
+Join Now
+</button>
+</div>
 
+</section>
+    
+
+<div class="container">
 <h2>Membership Registration</h2>
 
 <form id="memberForm">
@@ -189,23 +275,35 @@ Join our franchise model with a membership fee of just Rs.1000/- and start your 
 <option>Other</option>
 </select>
 
-<label>Mobile</label>
+<label>Mobile (Enter 10 Digit Number)</label>
 <input type="number" name="mobile" required>
-
-<label>Email</label>
+    
+<label>EMail ID</label>
 <input type="text" name="email">
 
-<label>Blood Group</label>
+    
+<label>Blood Group (Optional)</label>
 <input type="text" name="blood">
 
 <h3>Address</h3>
 
-<input type="text" name="address1" placeholder="Address Line 1">
-<input type="text" name="address2" placeholder="Address Line 2">
-<input type="text" name="city" placeholder="City">
-<input type="text" name="pincode" placeholder="Pincode">
-<input type="text" name="state" placeholder="State">
-<input type="text" name="country" placeholder="Country">
+<label>Address Line 1</label>
+<input type="text" name="address1">
+
+<label>Address Line 2</label>
+<input type="text" name="address2">
+
+<label>City</label>
+<input type="text" name="city">
+
+<label>Pincode</label>
+<input type="text" name="pincode">
+
+<label>State</label>
+<input type="text" name="state">
+
+<label>Country</label>
+<input type="text" name="country">
 
 <label>Your Profession</label>
 <select name="profession">
@@ -213,6 +311,12 @@ Join our franchise model with a membership fee of just Rs.1000/- and start your 
 <option>Fresher</option>
 <option>House Wife</option>
 <option>Working Professional</option>
+<option>Parent/Guardian</option>
+<option>Retired Person</option>
+<option>Senior Citizen</option>
+<option>Handicapped</option>
+<option>Widow</option>
+<option>Social Worker</option>
 <option>Others</option>
 </select>
 
@@ -220,12 +324,18 @@ Join our franchise model with a membership fee of just Rs.1000/- and start your 
 
 <div class="checkbox-group">
 <label><input type="checkbox" name="help" value="Education"> Education</label>
-<label><input type="checkbox" name="help" value="Job"> Job</label>
-<label><input type="checkbox" name="help" value="Business"> Business</label>
-<label><input type="checkbox" name="help" value="Finance"> Finance</label>
+<label><input type="checkbox" name="help" value="Financial Assistance"> Financial Assistance</label>
+<label><input type="checkbox" name="help" value="Scholarship"> Scholarship</label>
+<label><input type="checkbox" name="help" value="Health & Wealth"> Health & Wealth Management</label>
+<label><input type="checkbox" name="help" value="Job"> Job Opportunity</label>
+<label><input type="checkbox" name="help" value="Business"> Business Management</label>
+<label><input type="checkbox" name="help" value="Industrial"> Industrial Solutions</label>
+<label><input type="checkbox" name="help" value="Govt"> Govt Liaison</label>
+<label>Extra Information</label> <textarea name="extra"></textarea>    
 </div>
+    
 
-<textarea name="extra" placeholder="Extra Information"></textarea>
+<br><br>
 
 <button type="submit">Submit</button>
 
@@ -235,13 +345,13 @@ Join our franchise model with a membership fee of just Rs.1000/- and start your 
 
 </div>
 
+<!-- Footer -->
 <div class="footer">
-DR Tech Solutions | 📞 +91 7708043476
+DR Tech Solutions | 📞 +91 7708043476 | 📧 drtech1solutions25@gmail.com
 </div>
 
 <script>
-const scriptURL = "YOUR_GOOGLE_SCRIPT_URL";
-
+const scriptURL = "https://script.google.com/macros/s/AKfycbwzAnwZfOPGlrVP-xFzN-qXCB5zpiTwq7T-elLeU2X8X8uEL44He-RGM5GMfAP-7nHI/exec";
 document.getElementById("memberForm").addEventListener("submit", e => {
     e.preventDefault();
 
@@ -253,7 +363,7 @@ document.getElementById("memberForm").addEventListener("submit", e => {
     })
     .then(response => {
         document.getElementById("successMsg").innerText =
-        "Registration Successful!";
+        "Registration Successful! Please complete payment.";
 
         window.location.href = "https://divine-connectionz.com";
     })
