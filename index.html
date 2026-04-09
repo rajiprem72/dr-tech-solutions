@@ -252,7 +252,7 @@ We assist in claiming your Provident Fund.
 </div>
     
 <p style="text-align:center; font-weight:bold; color:green; font-size:18px; margin-top:20px;">
-Join our franchise model with a membership fee of just Rs.1000/- and start your journey today!
+Join our franchise model with a membership fee of just Rs.1,500/- and start your journey today!
 </p>
 
 <div style="text-align:center; margin:20px 0;">
@@ -340,10 +340,17 @@ Join Now
 <label><input type="checkbox" name="help" value="Govt"> Govt Liaison</label>
 <label>Extra Information</label> <textarea name="extra"></textarea>    
 </div>
-    
 
 <br><br>
+ <!-- QR Code Image -->
+<label>Kindly pay Rs.1500/- using the QR Code given below</label><br>    
+<img src="qrcode.jpg" alt="QR Code for Google Form" width="300" height="300">
 
+<label>Transaction Reference Number</label>    
+<input type="text" name="reference">
+
+
+    
 <button type="submit">Submit</button>
 
 </form>
@@ -370,7 +377,7 @@ document.getElementById("memberForm").addEventListener("submit", e => {
     })
     .then(response => {
         document.getElementById("successMsg").innerText =
-        "Registration Successful! Please complete payment.";
+        "Registration Successful!";
 
         window.location.href = "https://dr-tech-solutions.in";
     })
