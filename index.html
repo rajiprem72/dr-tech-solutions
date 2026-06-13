@@ -141,7 +141,54 @@ input[type="checkbox"] {
     height: auto;
     object-fit: contain;
   }
-   
+/* Premium Civil Works Highlight */
+
+.civil-highlight {
+    background: linear-gradient(rgba(0,43,92,0.85),
+                rgba(0,43,92,0.85)),
+                url('construction-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 50px 25px;
+    margin: 40px auto;
+    border-radius: 15px;
+    max-width: 1000px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.civil-highlight h2 {
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 25px;
+}
+
+.highlight-box {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(5px);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #ffd700;
+}
+
+.highlight-box h3 {
+    margin-top: 0;
+    color: #ffd700;
+    font-size: 22px;
+}
+
+.highlight-box p {
+    line-height: 1.7;
+    font-size: 15px;
+}
+    
 </style>
 
 </head>
