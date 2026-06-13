@@ -144,19 +144,51 @@ input[type="checkbox"] {
 /* Premium Civil Works Highlight */
 
 .civil-highlight {
-    background: linear-gradient(rgba(0,43,92,0.85),
-                rgba(0,43,92,0.85)),
+    background: linear-gradient(
+                rgba(0,43,92,0.88),
+                rgba(0,43,92,0.88)),
                 url('construction-bg.jpg');
+
     background-size: cover;
     background-position: center;
+
     color: #fff;
-    padding: 50px 25px;
-    margin: 40px auto;
-    border-radius: 15px;
+    padding: 70px 25px 50px;
+    margin: 50px auto;
     max-width: 1000px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+    /* Premium Border */
+    border: 6px solid #FFD700;
+
+    border-radius: 15px;
+
+    /* Double Shadow */
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.15),
+        0 12px 30px rgba(0,0,0,0.35);
+
+    position: relative;
+    overflow: hidden;
 }
 
+.civil-highlight::before {
+    content: "★ PREMIUM CONSTRUCTION STANDARDS ★";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #FFD700;
+    color: #002b5c;
+
+    padding: 8px 25px;
+    font-weight: bold;
+    font-size: 14px;
+
+    border-radius: 0 0 10px 10px;
+}
+
+    
 .civil-highlight h2 {
     color: #ffd700;
     text-align: center;
@@ -335,6 +367,13 @@ We assist in claiming your Provident Fund.
 <section class="civil-highlight">
 
     <h2>🏗️ Why Our Civil Construction Services Are Different</h2>
+    <div style="
+        width:120px;
+        height:4px;
+        background:#FFD700;
+        margin:15px auto 35px auto;
+        border-radius:5px;">
+    </div>
 
     <div class="highlight-grid">
 
